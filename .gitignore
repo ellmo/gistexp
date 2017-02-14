@@ -1,0 +1,16 @@
+# Ignore logs, temps and uploads
+/log/*
+!/log/.keep
+/tmp
+/public/uploads
+
+# ignore bundles
+/.bundle
+
+# ignore coverage
+/coverage/*
+
+# ignore sensitive data
+/config/database.yml
+/config/secrets.yml
+.env
