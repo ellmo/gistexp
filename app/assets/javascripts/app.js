@@ -14,16 +14,28 @@ const app = new Vue({
       return !!this.githubToken;
     },
     gistList: function(){
-      return $.ajax({
-        url: "https://api.github.com/gists",
-        async: false,
-      }).responseJSON;
-    },
+      return store.state.gists;
+    }
   },
   methods: {
     getAuth: function(){
       window.location.href = github_auth_url + github_client_id + github_scope;
     },
+    getGistList: function(){
+      if(this.githubTokenPresent){
+        $.ajax({
+          url: "https://api.github.com/gists",
+          success: function(gistList){
+            store.state.gists = gistList;
+          },
+        })
+      } else {
+        return false;
+      }
+    },
+  },
+  created: function(){
+    this.getGistList();
   },
 }).$mount('#app')
 
