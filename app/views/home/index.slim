@@ -1,10 +1,11 @@
 #app
   .row v-if="githubTokenPresent"
     .small-8.columns
-      | Select a gist from the righthand list
+      router-view
     .small-4.columns
       li v-for="gist in gistList"
-        | {{ gist.description }}
+        router-link :to="{ name: 'showGist', params: { id: gist.id }}"
+          | {{ gist.id }}
   .row v-else=""
     button.button type="button" @click="getAuth" Log via Github
 

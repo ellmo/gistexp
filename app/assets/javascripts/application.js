@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require_tree ./vendor
+//= require_tree ./components
 //= require router
 //= require store
 //= require app
