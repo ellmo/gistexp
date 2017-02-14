@@ -3,6 +3,7 @@ const github_client_id = "client_id=1921e4072d1b9108c5a8&";
 const github_scope     = "scope=gist"; // "repo,gist"
 
 const app = new Vue({
+  store,
   router,
 
   computed: {

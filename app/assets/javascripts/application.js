@@ -12,4 +12,5 @@
 //
 //= require_tree ./vendor
 //= require router
+//= require store
 //= require app
