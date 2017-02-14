@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require_tree ./vendor
+//= require vue
+//= require vue-router
 //= require_tree .
