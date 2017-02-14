@@ -1,8 +1,10 @@
 #app
-  .row
-    .small-2.columns
+  .row v-if="githubTokenPresent"
     .small-8.columns
-      router-view v-if="githubTokenPresent"
-      button.button type="button" v-else="" @click="getAuth" Log via Github
-    .small-2.columns
+      | Select a gist from the righthand list
+    .small-4.columns
+      li v-for="gist in gistList"
+        | {{ gist.description }}
+  .row v-else=""
+    button.button type="button" @click="getAuth" Log via Github
 

@@ -12,6 +12,12 @@ const app = new Vue({
     githubTokenPresent: function(){
       return !!this.githubToken;
     },
+    gistList: function(){
+      return $.ajax({
+        url: "https://api.github.com/gists",
+        async: false,
+      }).responseJSON;
+    },
   },
   methods: {
     getAuth: function(){
