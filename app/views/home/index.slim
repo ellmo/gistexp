@@ -1,8 +1,8 @@
 #app
   .row
     .small-2.columns
-      button.button type="button" @click="getAuth" Log via Github
     .small-8.columns
-      router-view
+      router-view v-if="githubTokenPresent"
+      button.button type="button" v-else="" @click="getAuth" Log via Github
     .small-2.columns
 
